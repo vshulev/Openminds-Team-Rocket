@@ -1,0 +1,9 @@
+//var mongo = require('mongodb');
+//var client = mongo.MongoClient;
+
+exports.test = function(req, res) {
+	//query db
+	
+
+	res.render('test');
+};

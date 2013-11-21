@@ -15,5 +15,5 @@ html
 				li
 					a(href='#') Inventory
 				li
-					input(type='text', placeholder='Search...')
+					input(type='text', value='Search...')
 		block content
