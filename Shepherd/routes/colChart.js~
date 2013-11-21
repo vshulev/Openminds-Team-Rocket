@@ -1,9 +1,9 @@
-
 exports.display = function(req, res) {
-
-	// query data
-
-
+	console.log(res);
 	// render view
 	res.render('colChart');
 };
+
+exports.getData = function(req, res) {
+	
+}

@@ -1,10 +1,9 @@
-
 exports.display = function(req, res) {
-
-	// query data
-	
-	// process response
-
+	console.log(res);
 	// render view
 	res.render('colChart');
 };
+
+exports.getData = function(req, res) {
+	res.send({ hello: "world" });
+}
