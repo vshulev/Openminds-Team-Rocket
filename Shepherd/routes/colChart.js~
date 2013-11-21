@@ -1,0 +1,9 @@
+
+exports.display = function(req, res) {
+
+	// query data
+
+
+	// render view
+	res.render('colChart');
+};
