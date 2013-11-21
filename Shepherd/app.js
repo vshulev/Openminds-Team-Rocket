@@ -34,10 +34,6 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-/*
- * Connect to db
- */
-
 
 
 /*
