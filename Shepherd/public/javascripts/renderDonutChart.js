@@ -29,10 +29,7 @@ function DonutChart(title, params) {
 params = {
   Heath: 'Status',
   Good: 100000,
-  Mental: 1000,
-  Dead: 500,
-  Contagious: 500,
-  ILikeRainBows: 2000
+  Bad: 1000
 }
 
 DonutChart('Health status', params);
