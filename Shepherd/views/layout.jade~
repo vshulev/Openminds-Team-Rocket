@@ -5,6 +5,7 @@ html
 		link(rel='stylesheet', href='/stylesheets/style.css')
 		script(type='text/javascript', src='https://www.google.com/jsapi')
 		script(type='text/javascript', src='/javascripts/jquery-1.10.2.min.js')
+		script(type='text/javascript', src='/javascripts/search.js')
 		block includes
 	body
 
@@ -19,6 +20,9 @@ html
 					li
 						a(href='#') Inventory
 					li
-						input(type='text', placeholder='Search...')
+						form#searchform(method='get', action='')
+							input(type='text', placeholder='Search...')
 						
+			#clear
+
 			block content
