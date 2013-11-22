@@ -2,13 +2,11 @@ var Model = require('../models/model').Model;
 
 exports.display = function(req, res) {
 	var model = new Model();
-	model.getOverallHealth(function(err, result) {
+	model.getMachineSoftware('SRVW0000060058', function(err, result) {
 		if(err) res.send(err);
-		else res.send(result);
+		else {
+			querydata = JSON.stringify(result);
+			res.render('colChart', querydata);
+		}
 	});
-
-	/*
-	// render view
-	res.render('colChart');
-	*/
 };

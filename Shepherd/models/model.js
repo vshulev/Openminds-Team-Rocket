@@ -58,6 +58,38 @@ exports.Model = function() {
 		});
 	}
 
+	/*
+	 * Returns relevant information about a single machine
+	 */
+	this.getMachineInfo = function(id, callback) {
+		this.getCollection('machines', function(err, collection) { 
+			if(err) callback(err);
+			else {
+				collection.find({ ServerName: id }, { _id: 0 }).toArray(function(err, results) {
+					if(err) callback(error);
+					else callback(null, results);
+				});
+			}
+		});
+	}
+
+	/*
+	 * Returns all software installed on machine
+	 */
+	this.getMachineSoftware = function(id, callback) {
+		this.getCollection('inventory', function(err, collection) {
+			if(err) callback(err);
+			else {
+				collection.find({ ServerName: id }, { _id: 0, PackageID: 1 }).toArray(function(err, results) {
+					if(err) callback(err);
+					else callback(null, results);
+				});
+			}
+		});
+	}
+
+	
+
 }
 
 

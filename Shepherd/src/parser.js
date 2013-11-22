@@ -44,6 +44,6 @@ function parser(filename, coll){
     }
 }
 
-new parser("Inventory20131006.txt", "inventory");
-new parser("Machines20131006.txt", "machines");
-new parser("Software20131006.txt", "software");
+new parser("Inventory20131006.txt", "everything");
+new parser("Machines20131006.txt", "everything");
+new parser("Software20131006.txt", "everything");
