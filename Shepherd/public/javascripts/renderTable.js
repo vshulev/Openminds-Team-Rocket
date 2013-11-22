@@ -30,20 +30,14 @@ function SoftwareList(params) {
           size = params[name].length;
         };
         
-        console.log(size);
         for (i = 0; i < size; i++){
           var values = new Array();
           for (name in params){
             values.push(params[name][i] + '');
           };
           rows.push(values);
-          console.log(values.length);
-          console.log(rows);
         }
-
-
         data.addRows(rows);
-
         var table = new google.visualization.Table(document.getElementById('table_div2'));
         table.draw(data, {showRowNumber: false});
       }
