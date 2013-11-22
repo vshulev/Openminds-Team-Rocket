@@ -1,0 +1,6 @@
+/*
+ * Accepts data of the form [ { ... }, { ... }, ... ]
+ */
+function TableChart(name, data) {
+
+}

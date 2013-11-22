@@ -4,7 +4,16 @@ body {
 }
 
 a {
-	color: #00B7FF;
+	background: #00B7FF;
+	color: white;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 5px 10px;
+}
+
+a:hover {
+	background: blue;
 }
 
 #mID {
@@ -25,11 +34,13 @@ nav {
 	display: inline-block;
 }
 
-h1 {
+#clear {
+	height: 0;
 	clear:both;
 }
 
-
+/*
 #donutChart_div1{
 	
 }
+*/

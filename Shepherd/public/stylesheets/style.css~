@@ -4,9 +4,42 @@ body {
 }
 
 a {
-	color: #00B7FF;
+	background: #00B7FF;
+	color: white;
+	display: block;
+	text-decoration: none;
+	border-radius: 5px;
+	padding: 5px 10px;
 }
 
-#jsondata {
+a:hover {
+	background: blue;
+}
+
+#mID {
 	display:none;
 }
+
+ul li {
+	text-align: center;
+	list-style-type: none;
+	float: left;
+	padding-right: 10px;
+}
+
+nav {
+	clear: both;
+	margin: auto 0;
+	float: left;
+	display: inline-block;
+}
+
+h1 {
+	clear:both;
+}
+
+/*
+#donutChart_div1{
+	
+}
+*/

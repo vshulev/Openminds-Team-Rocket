@@ -8,8 +8,4 @@ block content
 
 	h1 Table
 	#table_div1
-
-	br
-	br
-
 	#table_div2

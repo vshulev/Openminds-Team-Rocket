@@ -15,7 +15,7 @@ var test = require('./routes/test');
 var colChart = require('./routes/colChart');
 var machineInfo = require('./routes/machineInfo');
 var software = require('./routes/software');
-var health = require('./routes/health');
+var machines = require('./routes/machines');
 
 var app = express();
 
@@ -43,10 +43,9 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/test', test.display);
 app.get('/colChart', colChart.display);
-
 app.get('/machineInfo/:id', machineInfo.display);
 app.get('/software', software.display);
-app.get('/health', health.display);
+app.get('/machines', machines.display);
 app.get('/machineInfo/machine/:id', machineInfo.getMachines);
 app.get('/machineInfo/software/:id', machineInfo.getSoftware);
 
