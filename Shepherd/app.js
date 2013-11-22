@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -36,8 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
-
 
 /*
  * Routes
