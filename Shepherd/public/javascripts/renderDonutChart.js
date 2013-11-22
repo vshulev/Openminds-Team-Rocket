@@ -34,4 +34,6 @@ params = {
   Contagious: 500,
   ILikeRainBows: 2000
 }
+
 DonutChart('Health status', params);
+
