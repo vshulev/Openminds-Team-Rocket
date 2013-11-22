@@ -1,7 +1,7 @@
 function MachineTable(params) {
-
-    google.load('visualization', '1', {packages:['table']});
+      google.load('visualization', '1', {packages:['table']});
       google.setOnLoadCallback(drawTable);
+
       function drawTable() {
         var values = [];
         var data = new google.visualization.DataTable();
@@ -10,16 +10,47 @@ function MachineTable(params) {
           values.push(params[name] + '');
         };
 
-        data.addRows([
-          values
-        ]);
+        data.addRows([values]);
 
-        var table = new google.visualization.Table(document.getElementById('table_div'));
-        table.draw(data, {showRowNumber: true});
+        var table = new google.visualization.Table(document.getElementById('table_div1'));
+        table.draw(data, {showRowNumber: false});
       }
 }
 
-var params = {
+function SoftwareList(params) {
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+        var rows = []
+        var data = new google.visualization.DataTable();
+        var size = 0;
+        for (name in params){
+          data.addColumn('string', name);
+          size = params[name].length;
+        };
+        
+        console.log(size);
+        for (i = 0; i < size; i++){
+          var values = new Array();
+          for (name in params){
+            values.push(params[name][i] + '');
+          };
+          rows.push(values);
+          console.log(values.length);
+          console.log(rows);
+        }
+
+
+        data.addRows(rows);
+
+        var table = new google.visualization.Table(document.getElementById('table_div2'));
+        table.draw(data, {showRowNumber: false});
+      }
+}
+
+
+var data = {
     ServerName: 'SRVW0000013452',
     Location: 'London',
     Type: 'VMware Virtual',
@@ -33,5 +64,16 @@ var params = {
     LastInventory: '2013-10-06'
   };
 
-MachineTable(params);
+var software = {
+    AppName: ['eclipse', 'skype', 'ff', 'ie'],
+    version: [5,2,3,1]
+};
+
+var params = {
+  data: data,
+  software: software
+};
+
+MachineTable(data);
+SoftwareList(software);
 //MachineTable(JSON.parse($('#jsondata').text()));
