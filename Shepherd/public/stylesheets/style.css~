@@ -8,5 +8,5 @@ a {
 }
 
 #jsondata {
-	dislpay: none;
+	display:none;
 }

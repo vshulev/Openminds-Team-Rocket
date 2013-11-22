@@ -46,11 +46,12 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/test', test.display);
 app.get('/colChart', colChart.display);
+
 app.get('/machineInfo/:id', machineInfo.display);
 app.get('/software', software.display);
 app.get('/health', health.display);
-
-
+app.get('/machineInfo/machine/:id', machineInfo.getMachines);
+app.get('/machineInfo/software/:id', machineInfo.getSoftware);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

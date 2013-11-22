@@ -1,8 +1,13 @@
-function MachineTable(params) {
+function MachineTable(/*params*/) {
       google.load('visualization', '1', {packages:['table']});
-      google.setOnLoadCallback(drawTable);
+      google.setOnLoadCallback(
+	$(function() {
+		var mID = $("#mID").text();
+		$.get("http://localhost:3000/machineInfo/machine/" + mID, drawTable, "json");
+	})
+      );
 
-      function drawTable() {
+      function drawTable(params) {
         var values = [];
         var data = new google.visualization.DataTable();
         for (name in params){
@@ -17,11 +22,16 @@ function MachineTable(params) {
       }
 }
 
-function SoftwareList(params) {
+function SoftwareList(/*params*/) {
       google.load('visualization', '1', {packages:['table']});
-      google.setOnLoadCallback(drawTable);
+      google.setOnLoadCallback(
+	$(function() {
+		var mID = $("#mID").text();
+		$.get("http://localhost:3000/machineInfo/software/" + mID, drawTable, "json");
+	})
+      );
 
-      function drawTable() {
+      function drawTable(params) {
         var rows = []
         var data = new google.visualization.DataTable();
         var size = 0;
@@ -42,7 +52,9 @@ function SoftwareList(params) {
         table.draw(data, {showRowNumber: false});
       }
 }
-
+/*
+ * Hardcoded data
+ */
 
 var data = {
     ServerName: 'SRVW0000013452',
@@ -63,11 +75,5 @@ var software = {
     version: [5,2,3,1]
 };
 
-var params = {
-  data: data,
-  software: software
-};
-
-MachineTable(data);
 SoftwareList(software);
-//MachineTable(JSON.parse($('#jsondata').text()));
+MachineTable(data);
