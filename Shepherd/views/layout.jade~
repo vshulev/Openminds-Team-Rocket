@@ -1,8 +1,9 @@
 doctype 5
 html
 	head
-		title= title
+		title Shepherd
 		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(type='text/javascript', src='https://www.google.com/jsapi')
 		script(type='text/javascript', src='https://www.google.com/jsapi')
 		block includes
 	body
@@ -15,5 +16,5 @@ html
 				li
 					a(href='#') Inventory
 				li
-					input(type='text', value='Search...')
+					input(type='text', placeholder='Search...')
 		block content

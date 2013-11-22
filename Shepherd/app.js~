@@ -35,12 +35,24 @@ if ('development' == app.get('env')) {
 }
 
 /*
+ * Connect tp DB
+ */
+var Db = require('mongodb').Db;
+var Connection = require('mongodb').Connection;
+var Server = require('mongodb').Server;
+var BSON = require('mongodb').BSON;
+var ObjectID = require('mongodb').ObjectID;
+
+
+
+/*
  * Routes
  */
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/test', test.display);
-app.get('', colChart.display);
+app.get('/colChart', colChart.display);
+app.get('/colChart/json', colChart.getData);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
