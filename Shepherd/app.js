@@ -14,6 +14,7 @@ var routes = require('./routes');
 var user = require('./routes/user');
 var test = require('./routes/test');
 var colChart = require('./routes/colChart');
+var machineInfo = require('./routes/machineInfo');
 
 var app = express();
 
@@ -41,6 +42,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/test', test.display);
 app.get('/colChart', colChart.display);
+app.get('/machineInfo/:id', machineInfo.display);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
