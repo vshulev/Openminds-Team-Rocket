@@ -43,6 +43,12 @@ exports.Model = function() {
 
 	}
 
+	/********************
+	 *                  *
+	 * DATABASE QUERIES *
+	 *                  *
+	 ********************/
+
 	/*
 	 * Returns data about all machines health
 	 */
